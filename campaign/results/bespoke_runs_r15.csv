@@ -1,0 +1,272 @@
+order,timestamp,round,label,tok_s,bench_version,node_or_job,kind,source
+1,2026-09-22T07:56:46Z,pre-r1,"TP-scaffold Phase B 8-way concurrent smoke, round 1 of 3",8.4,e2e-bench (early smoke),unknown,other,Claude transcript 82bb4a6c-1b50-4e61-825b-6356e967a0cd.jsonl
+2,2026-09-22T07:56:46Z,pre-r1,"TP-scaffold Phase B 8-way concurrent smoke, round 2 of 3",11.8,e2e-bench (early smoke),unknown,other,Claude transcript 82bb4a6c...jsonl
+3,2026-09-22T07:56:46Z,pre-r1,"TP-scaffold Phase B 8-way concurrent smoke, round 3 of 3",13.9,e2e-bench (early smoke),unknown,other,Claude transcript 82bb4a6c...jsonl
+4,2026-09-22T08:52:23Z,pre-r1,"Pipeline-parallel (PP) control, c8 aggregate",3.87,e2e-bench c8,unknown,control,Claude transcript 82bb4a6c...jsonl
+5,2026-09-22T08:52:23Z,pre-r1,"TP=4 candidate vs PP, c8 aggregate (architecture decision)",13.9,e2e-bench c8,unknown,other,Claude transcript 82bb4a6c...jsonl
+6,2026-09-22T10:01Z,pre-r1,"MXFP4 fused-GEMV kernel, batch=1",9,e2e-bench b1,unknown,other,Claude transcript 82bb4a6c...jsonl
+7,2026-09-22T10:05:55Z,pre-r1,"MXFP4 fused-GEMV kernel, batch=48 (e2e2.log)",41,e2e-bench b48,unknown,other,Claude transcript 82bb4a6c...jsonl
+8,2026-09-22T10:30:25Z,pre-r1,"Control: attn-dispatch+MXFP4 fix, pre-microbatch-fix, batch=48",43,e2e-bench b48,unknown,control,Claude transcript 82bb4a6c...jsonl
+9,2026-09-22T11:04:20Z,pre-r1,"Decode-microbatch-fix applied, batch=8",39,e2e-bench,unknown,other,Claude transcript 82bb4a6c...jsonl
+10,2026-09-22T11:04:20Z,pre-r1,"Decode-microbatch-fix applied, batch=16",48,e2e-bench,unknown,other,Claude transcript 82bb4a6c...jsonl
+11,2026-09-22T11:04:20Z,pre-r1,"Decode-microbatch-fix applied, batch=48 (unchanged by design)",41,e2e-bench,unknown,other,Claude transcript 82bb4a6c...jsonl
+12,2026-09-22T11:22:27Z,pre-r1,"Microbatch min_slots sweep @b48, min_slots=6",39,e2e-bench b48,unknown,candidate_rejected,Claude transcript 82bb4a6c...jsonl
+13,2026-09-22T11:22:27Z,pre-r1,"Microbatch min_slots sweep @b48, min_slots=8",48,e2e-bench b48,unknown,candidate_rejected,Claude transcript 82bb4a6c...jsonl
+14,2026-09-22T11:22:27Z,pre-r1,"Microbatch min_slots sweep @b48, min_slots=12",71,e2e-bench b48,unknown,candidate_rejected,Claude transcript 82bb4a6c...jsonl
+15,2026-09-22T11:22:27Z,pre-r1,"Microbatch min_slots sweep @b48, min_slots=16",83,e2e-bench b48,unknown,candidate_rejected,Claude transcript 82bb4a6c...jsonl
+16,2026-09-22T11:22:27Z,pre-r1,"Microbatch min_slots sweep @b48, min_slots=24",112,e2e-bench b48,unknown,candidate_rejected,Claude transcript 82bb4a6c...jsonl
+17,2026-09-22T11:22:27Z,pre-r1,"Microbatch min_slots sweep @b48, min_slots=49 (undivided, new default)",154,e2e-bench b48,unknown,other,Claude transcript 82bb4a6c...jsonl
+18,2026-09-22T11:47:21Z,pre-r1,"Triangulation pre-merge control: MoE-sweep branch, batch=48",155,e2e-bench b48,unknown,control,Claude transcript 82bb4a6c...jsonl
+19,2026-09-22T11:47:21Z,pre-r1,"Triangulation pre-merge control: decode-microbatch-fix branch, batch=48",151,e2e-bench b48,unknown,control,Claude transcript 82bb4a6c...jsonl
+20,2026-09-22T11:47:39Z,pre-r1,"opt-integrated-v3 merged (4 fixes), batch=48",154,e2e-bench b48,unknown,other,Claude transcript 82bb4a6c...jsonl
+21,2026-09-22T12:41:18Z,pre-r1,"Repro on second node (sweep_min_slots_batch48.log), mean of 3",159,e2e-bench b48,unknown,control,Claude transcript 82bb4a6c...jsonl
+22,2026-09-22T13:14:45Z,pre-r1,"TP=4 port (opt-tp4-on-v3), interim, batch=48",205.9,e2e-bench b48,unknown,other,Claude transcript 82bb4a6c...jsonl
+23,2026-09-22T13:34:49Z,pre-r1,"PP control (final, same commit), batch=48",151.4,e2e-bench b48,unknown,control,Claude transcript 82bb4a6c...jsonl
+24,2026-09-22T13:34:49Z,pre-r1,"TP=4 (final measured, a6cc924efbb08de1a), batch=48",240.6,e2e-bench b48,unknown,other,Claude transcript 82bb4a6c...jsonl
+25,2026-09-22T14:36:10Z,pre-r1,"TP=4 + byte-LUT decode (v4), batch=48",253.47,e2e-bench b48,unknown,other,Claude transcript 82bb4a6c...jsonl
+26,2026-09-22T16:07:57Z,pre-r1,use_grouped bug fix applied on v4,289.1,e2e-bench b48,unknown,other,Claude transcript 82bb4a6c...jsonl
+27,2026-09-22T16:46:52Z,pre-r1,"Graph capture v2 (a3c8eb765cb60099d), eager arm",254.2,e2e-bench b48,unknown,control,Claude transcript 82bb4a6c...jsonl
+28,2026-09-22T16:46:52Z,pre-r1,"Graph capture v2 (a3c8eb765cb60099d), captured replay",347.5,e2e-bench b48,unknown,other,Claude transcript 82bb4a6c...jsonl
+29,2026-09-22T17:12:40Z,pre-r1,"DeltaNet fusion + use_grouped fix, node node01, before",273.7,e2e-bench b48,node01,control,Claude transcript 82bb4a6c...jsonl
+30,2026-09-22T17:12:40Z,pre-r1,"DeltaNet fusion + use_grouped fix, node node01, after (rep 1)",386.9,e2e-bench b48,node01,other,Claude transcript 82bb4a6c...jsonl
+31,2026-09-22T17:12:40Z,pre-r1,"DeltaNet fusion + use_grouped fix, node node01, after (rep 2)",390.1,e2e-bench b48,node01,other,Claude transcript 82bb4a6c...jsonl
+32,2026-09-22T17:12:40Z,pre-r1,"DeltaNet fusion + use_grouped fix, node node02, before",246.8,e2e-bench b48,node02,control,Claude transcript 82bb4a6c...jsonl
+33,2026-09-22T17:12:40Z,pre-r1,"DeltaNet fusion + use_grouped fix, node node02, after",401.7,e2e-bench b48,node02,other,Claude transcript 82bb4a6c...jsonl
+34,2026-09-22T18:07:02Z,pre-r1,"opt-dense-gemm, plain opt-v5-dispatch control",391.6,e2e-bench b48,unknown,control,Claude transcript 82bb4a6c...jsonl
+35,2026-09-22T18:07:02Z,pre-r1,"opt-dense-gemm, fuse_moe_dense only (110.67ms)",402,e2e-bench b48,unknown,other,Claude transcript 82bb4a6c...jsonl
+36,2026-09-22T18:07:02Z,pre-r1,"opt-dense-gemm, + TunableOp selection (final)",447.1,e2e-bench b48,unknown,other,Claude transcript 82bb4a6c...jsonl
+37,2026-09-22T20:12:42Z,pre-r1,"Batch-scaling sweep on opt-dense-gemm (non-scoring), b=48",416.0,e2e-bench,unknown,control,Claude transcript 82bb4a6c...jsonl
+38,2026-09-22T20:12:42Z,pre-r1,"Batch-scaling sweep (non-scoring, diagnostic), b=64",565.9,e2e-bench,unknown,other,Claude transcript 82bb4a6c...jsonl
+39,2026-09-22T20:12:42Z,pre-r1,"Batch-scaling sweep (non-scoring, diagnostic), b=96",792.6,e2e-bench,unknown,other,Claude transcript 82bb4a6c...jsonl
+40,2026-09-22T20:12:42Z,pre-r1,"Batch-scaling sweep (non-scoring, diagnostic), b=128",894.9,e2e-bench,unknown,other,Claude transcript 82bb4a6c...jsonl
+41,2026-09-22T20:12:42Z,pre-r1,"Batch-scaling sweep (non-scoring, diagnostic), b=160",1098.1,e2e-bench,unknown,other,Claude transcript 82bb4a6c...jsonl
+42,2026-09-22T20:12:42Z,pre-r1,"Batch-scaling sweep (non-scoring, diagnostic), b=192",1362.6,e2e-bench,unknown,other,Claude transcript 82bb4a6c...jsonl
+43,2026-09-22T20:25:09Z,pre-r1,"graph-capture-port (a7fca507efbae1811) on dense-gemm, eager arm, TunableOp active",422.1,e2e-bench b48,unknown,control,Claude transcript 82bb4a6c...jsonl
+44,2026-09-22T20:25:09Z,pre-r1,"graph-capture-port, captured replay (new best, deployed)",568.9,e2e-bench b48,unknown,other,Claude transcript 82bb4a6c...jsonl
+45,2026-09-22T22:02:52Z,pre-r1,"rmsnorm-fusion A/B, unfused-eager control",444.4,e2e-bench b48,unknown,control,Claude transcript 82bb4a6c...jsonl
+46,2026-09-22T22:56Z,pre-r1,"rmsnorm-fusion (opt-rmsnorm-fusion @6b4c7caa), fused+captured, new best",620.0,e2e-bench b48,unknown,other,Claude transcript 82bb4a6c...jsonl
+47,2026-09-23T02:21:53Z,seed,"Pre-fix load-ramp v5, C=1 (TPOT guardrail breach)",8.9,load-ramp v5 C1,unknown,other,Claude transcript 82bb4a6c...jsonl
+48,2026-09-23T02:21:53Z,seed,"Pre-fix load-ramp v5, C=2 (= official Initial-bespoke 12.8)",12.8,load-ramp v5 C2,unknown,accepted,Claude transcript 82bb4a6c...jsonl / CAMPAIGN_LOG.md
+49,2026-09-23T02:21:53Z,seed,"Pre-fix load-ramp v5, C=4 (TPOT guardrail breach)",16.3,load-ramp v5 C4,unknown,regression_or_broken,Claude transcript 82bb4a6c...jsonl
+50,2026-09-23T02:27:39Z,seed,"prefix-fix 49e9d871 (no-op / thinking-mode bug), C16",33.1,load-ramp v5 C16,unknown,candidate_rejected,Claude transcript 82bb4a6c...jsonl
+51,2026-09-23T03:08:51Z,prefix-cache-fix,"d08fbec2, C=16 (official winner)",55.6,load-ramp v5 C16,unknown,accepted,Claude transcript 82bb4a6c...jsonl / CAMPAIGN_LOG.md
+52,2026-09-23T03:08:51Z,prefix-cache-fix,"d08fbec2, C=48 (cache-eviction collapse)",20.6,load-ramp v5 C48,unknown,regression_or_broken,Claude transcript 82bb4a6c...jsonl
+53,2026-09-23T06:13:34Z,integration-r1,"First numbers, --quick C=48",24.9,load-ramp --quick C48,job 648527,other,Claude transcript 82bb4a6c...jsonl
+54,2026-09-23T06:44:54Z,integration-r1,C=16 ramp,43.8,load-ramp C16,job 648527,other,Claude transcript 82bb4a6c...jsonl
+55,2026-09-23T13:39:43Z,r2/r3-prep,"No-graphs server, --quick C=48 (lane e_baseline)",103.7,load-ramp --quick C48,job 648559,control,Claude transcript 82bb4a6c...jsonl
+56,2026-09-23T13:47:24Z,r2/r3-prep,"Graph capture fixed, C=48",115.1,load-ramp C48,unknown,other,Claude transcript 82bb4a6c...jsonl
+57,2026-09-23T13:57:21Z,r2/r3-prep,"Overlap-scheduling config, --quick C=48 (best config so far)",139.1,load-ramp --quick C48,unknown,other,Claude transcript 82bb4a6c...jsonl
+58,2026-09-23T14:04:02Z,r2/r3-prep,Baseline load ramp (3 HIP configs failed to boot),144.6,load-ramp,unknown,control,Claude transcript 82bb4a6c...jsonl
+59,2026-09-23T14:20:01Z,r2/r3-prep,"p_prefill (grouped-MoE + chunked-DeltaNet prefill), --quick",133.9,load-ramp --quick,job 648559,other,Claude transcript 82bb4a6c...jsonl
+60,2026-09-23T14:20:14Z,r2/r3-prep,"Overlap+prefill kernels, ramp peak (scored, guardrail-limited)",101.4,load-ramp,job 648559,other,Claude transcript 82bb4a6c...jsonl
+61,2026-09-23T14:24:59Z,r2/r3-prep,b_mixed (SEED_MIXED_BATCH=1) regression,50,load-ramp,unknown,regression_or_broken,Claude transcript 82bb4a6c...jsonl (matches CAMPAIGN_LOG Tried-and-parked: eager mixed batch)
+62,2026-09-23T14:24:59Z,r2/r3-prep,"e_hot (hot experts, dense bf16) regression",58,load-ramp,unknown,regression_or_broken,Claude transcript 82bb4a6c...jsonl (matches CAMPAIGN_LOG Tried-and-parked: hot-expert dense path)
+63,2026-09-23T14:37:56Z,r2/r3-prep,"Overlap+prefill kernels, best scored result",106.2,load-ramp,unknown,other,Claude transcript 82bb4a6c...jsonl
+64,2026-09-23T14:49:14Z,r2/r3-prep,"Split-K decode attention, C=48, first inside guardrail",194.4,load-ramp C48,unknown,other,Claude transcript 82bb4a6c...jsonl
+65,2026-09-23T15:07:46Z,r2/r3-prep,"Split-K decode attention, repeat run, C=48",197.6,load-ramp C48,unknown,other,Claude transcript 82bb4a6c...jsonl
+66,2026-09-23T15:24:29Z,r2/r3-prep,"+ HIP MoE, C=48",191.5,load-ramp C48,unknown,other,Claude transcript 82bb4a6c...jsonl
+67,2026-09-23T15:24:29Z,r2/r3-prep,"+ HIP MoE, C=64 (TTFT p95 14.4s > 10s limit)",232,load-ramp C64,unknown,candidate_rejected,Claude transcript 82bb4a6c...jsonl
+68,2026-09-23T15:24:29Z,r3,"integration-r3 43f96ce8, full flag set, C=48 (official winner)",337.1,load-ramp v5 C48,unknown,accepted,Claude transcript 82bb4a6c...jsonl / CAMPAIGN_LOG.md
+69,2026-09-23T15:24:29Z,r3,"graph-captured small prefills (SEED_PREFILL_GRAPHS, never actually engaged)",315,load-ramp,unknown,candidate_rejected,Claude transcript 82bb4a6c...jsonl
+70,2026-09-23T17:10:07Z,r4,Decode fixes alone (isolated component),358.4,load-ramp,unknown,other,Claude transcript 82bb4a6c...jsonl
+71,2026-09-23T17:10:07Z,r4,Prefill-graph fix alone (isolated component),414.8,load-ramp,unknown,other,Claude transcript 82bb4a6c...jsonl
+72,2026-09-23T17:10:07Z,r4,"integration-r4 4023d4e0, full flag set, C=64 peak (official winner)",448.6,load-ramp C64,unknown,accepted,Claude transcript 82bb4a6c...jsonl / CAMPAIGN_LOG.md
+73,2026-09-23T17:10:07Z,r4,"Full flag set, C=16",317,load-ramp C16,unknown,other,Claude transcript 82bb4a6c...jsonl
+74,2026-09-23T17:10:07Z,r4,"Full flag set, C=48",408,load-ramp C48,unknown,other,Claude transcript 82bb4a6c...jsonl
+75,2026-09-23T17:23:40Z,r4,"Repeat/stable, C=64",455,load-ramp C64,unknown,control,Claude transcript 82bb4a6c...jsonl
+76,2026-09-23T18:20Z,r4,"Repeat run, noise check",440,load-ramp,unknown,control,Claude transcript 82bb4a6c...jsonl
+77,2026-09-23T18:45:16Z,r4/opt,"MTP speculative decoding, C=48 (fails TPOT guardrail, killed)",94.7,load-ramp C48,unknown,regression_or_broken,Claude transcript 82bb4a6c...jsonl
+78,2026-09-23T19:09:08Z,r4/opt,max-batch 96 (KV-pool fix) - worse than b64's 454,393,load-ramp,unknown,candidate_rejected,Claude transcript 82bb4a6c...jsonl (matches CAMPAIGN_LOG Tried-and-parked: max-batch 96)
+79,2026-09-23T19:09:08Z,r4/opt,batch 64 comparison point (KV-pool fix context),454,load-ramp,unknown,control,Claude transcript 82bb4a6c...jsonl
+80,2026-09-23T19:11:25Z,r5 dev,SEED_PREFILL_FIT_GRAPH a01adb38 - before,440,load-ramp,unknown,control,commit a01adb38
+81,2026-09-23T19:11:25Z,r5 dev,SEED_PREFILL_FIT_GRAPH a01adb38 - after (packed prefill calls to captured graphs),449,load-ramp,unknown,other,commit a01adb38
+82,2026-09-23T19:23:31Z,r5,Partial build (3 of the decode flags),515.9,load-ramp,unknown,other,Claude transcript 82bb4a6c...jsonl
+83,2026-09-23T19:46:04Z,r5,"integration-r5 9f4fc1d7, full build, C=48 (official winner)",548.1,load-ramp v5 C48,unknown,accepted,Claude transcript 82bb4a6c...jsonl / CAMPAIGN_LOG.md
+84,2026-09-23T19:46:04Z,r5,"Full build, C=16",440,load-ramp C16,unknown,other,Claude transcript 82bb4a6c...jsonl
+85,2026-09-23T19:46:04Z,r5,"Full build, C=64",537,load-ramp C64,unknown,other,Claude transcript 82bb4a6c...jsonl
+86,2026-09-23T20:11:51Z,r5,Decode-flags-alone dip (no custom all-reduce; unexplained vs 3-flag run's 516),483,load-ramp,unknown,regression_or_broken,Claude transcript 82bb4a6c...jsonl
+87,2026-09-23T21:18:09Z,r5/opt,Caveat: C16 with a different all-reduce setting,371,load-ramp C16,unknown,control,Claude transcript 82bb4a6c...jsonl
+88,2026-09-23T21:36:51Z,r6,"integration-r6, full build (bit-exact glue fusions), C=48 (official winner)",564.0,load-ramp v5 C48,unknown,accepted,Claude transcript 82bb4a6c...jsonl / CAMPAIGN_LOG.md
+89,2026-09-23T21:36:51Z,r6,Without custom all-reduce (control),518.5,load-ramp C48,unknown,control,Claude transcript 82bb4a6c...jsonl
+90,2026-09-23T21:36:51Z,r6,"Full build, C=16",455,load-ramp C16,unknown,other,Claude transcript 82bb4a6c...jsonl
+91,2026-09-23T21:36:51Z,r6,"Full build, C=64",557,load-ramp C64,unknown,other,Claude transcript 82bb4a6c...jsonl
+92,2026-09-23T21:55:07Z,r6 dev,Two-row mixed totals 16dbc055 - baseline,611,load-ramp,unknown,other,commit 16dbc055
+93,2026-09-23T21:55:07Z,r6 dev,Two-row mixed totals 16dbc055 - C48 peak node A,631,load-ramp C48,unknown,other,commit 16dbc055
+94,2026-09-23T21:55:07Z,r6 dev,Two-row mixed totals 16dbc055 - C48 peak node B (noise vs node A),623,load-ramp C48,unknown,other,commit 16dbc055
+95,2026-09-24T00:04:00Z,integration-r7-prep,r6 + HIP skinny GEMM (tried and parked family),549,load-ramp,unknown,candidate_rejected,Claude transcript 82bb4a6c...jsonl
+96,2026-09-23T22:34:44Z,r7,"With skinny GEMM, peak C48 (tried-and-parked: -5% vs no-skinny)",624.7,load-ramp C48,unknown,candidate_rejected,Claude transcript 82bb4a6c...jsonl (matches CAMPAIGN_LOG Tried-and-parked: HIP skinny GEMM for decode)
+97,2026-09-23T22:34:44Z,r7,"integration-r7 10fa347d, without skinny GEMM, C=48 (official winner)",659.3,load-ramp v5 C48,unknown,accepted,Claude transcript 82bb4a6c...jsonl / CAMPAIGN_LOG.md
+98,2026-09-23T23:23:52Z,r8 dev,SEED_MOE_HIP_WIDE served ramp - base (flags_r6s + SEED_MIXED_GRAPH + SEED_PREFILL_GRAPH_DN_CHUNKED) peak,628.8,load-ramp C16/C48/C64,unknown,control,PREFILL_COST.md Served-ramp table / commit dfd74180 / Claude transcript 82bb4a6c...jsonl
+99,2026-09-23T23:23:52Z,r8 dev,SEED_MOE_HIP_WIDE served ramp - +SEED_MOE_HIP_WIDE=1 peak (+3.7%; node A),651.8,load-ramp C16/C48/C64,unknown,other,PREFILL_COST.md Served-ramp table / commit dfd74180 / Claude transcript 82bb4a6c...jsonl
+100,2026-09-23T23:48:48Z,r8 dev,"SEED_MOE_HIP_WIDE served ramp - +WIDE kernel only (budget 512, no wider mixed shapes) peak",644.6,load-ramp C16/C48/C64,unknown,candidate_rejected,PREFILL_COST.md Served-ramp table
+101,"2026-09-23T~23:48Z (three-node variance of the r7+WIDE build, node C)",r8 dev,SEED_MOE_HIP_WIDE build - third-node peak,688.3,load-ramp C16/C48/C64,unknown,other,"PREFILL_COST.md process lessons (""peaked 602 652 688 on three nodes"")"
+102,2026-09-23T23:52:15Z,r7 dev,"SEED_MOE_HIP_V2, ramp peak (within noise of 659; C16 fell 504->434, unclear if regression)",666,load-ramp,unknown,other,Claude transcript 82bb4a6c...jsonl
+103,2026-09-23T23:55:09Z,r7,"opt-decode-fusion3 (SEED_AR_RMSNORM_FUSED, bab22e7c), C=48 (official winner)",681.7,load-ramp v5 C48,unknown,accepted,Claude transcript 82bb4a6c...jsonl / CAMPAIGN_LOG.md
+104,2026-09-24T02:30:20Z,r8,"integration-r8 27b26b30, paired baseline (r7-based, same lease)",689.7,load-ramp v5 paired,unknown,control,Claude transcript 82bb4a6c...jsonl / CAMPAIGN_LOG.md
+105,2026-09-24T02:30:20Z,r8,"integration-r8 27b26b30, full build, C=48 (official winner)",751.0,load-ramp v5 paired C48,unknown,accepted,Claude transcript 82bb4a6c...jsonl / CAMPAIGN_LOG.md
+106,2026-09-24T02:33:24Z,r8/opt,"Round-2 results (FINE totals + fused DN glue), paired before (r7+WIDE) on node06",602.1,load-ramp lease 649845,node06,control,commit c618b858 / PREFILL_COST.md Round-2 table / Claude transcript
+107,2026-09-24T02:33:24Z,r8/opt,"Round-2 results, paired after (+SEED_MIXED_FINE_TOTALS + SEED_DN_PREFILL_GLUE_FUSED, +10.6%)",666.1,load-ramp lease 649845,node06,other,commit c618b858 / PREFILL_COST.md Round-2 table / Claude transcript
+108,2026-09-24T03:10:43Z,r8/opt,r8-vs-r9 comparison ramp on slow node,632.5,load-ramp v5 paired,node06,control,Claude transcript 82bb4a6c...jsonl / CAMPAIGN_LOG.md
+109,2026-09-24T04:10:37Z,r9-prep,"Custom HIP dense GEMM, same-node pair, control (tried and parked family)",700.1,load-ramp paired,unknown,control,Claude transcript 82bb4a6c...jsonl
+110,2026-09-24T04:10:37Z,r9-prep,"Custom HIP dense GEMM, same-node pair, candidate (0.6-0.9x tuned hipBLASLt, noise/regression)",693.1,load-ramp paired,unknown,candidate_rejected,Claude transcript 82bb4a6c...jsonl (matches CAMPAIGN_LOG Tried-and-parked: Custom HIP dense GEMM)
+111,2026-09-24T02:37:30Z,r9,"integration-r9 de69eeda, full build, paired vs r8 (official winner; slow node)",688.4,load-ramp v5 paired,unknown,accepted,Claude transcript 82bb4a6c...jsonl / CAMPAIGN_LOG.md
+112,2026-09-24T07:32:50Z,r10-prep,"All-reduce/compute overlap (SEED_AR_SP=1) candidate (+6.1%, promising, not yet promoted)",789.7,load-ramp paired,unknown,other,Codex rollout-2026-09-24T07-28-15
+113,2026-09-24T07:32:50Z,r10-prep,"All-reduce/compute overlap, paired r9 control",744.0,load-ramp paired,unknown,control,Codex rollout-2026-09-24T07-28-15
+114,2026-09-24T07:32:50Z,r10-prep,Wide MoE v2 candidate (neutral vs control),786.2,load-ramp paired,unknown,candidate_rejected,Codex rollout-2026-09-24T07-28-15
+115,2026-09-24T07:32:50Z,r10-prep,"Wide MoE v2, paired r9 control",784.5,load-ramp paired,unknown,control,Codex rollout-2026-09-24T07-28-15
+116,2026-09-24T07:32:50Z,r10-prep,"Fold-turn-suffix, early quick check, candidate (incomplete, no full ramp yet)",763.7,load-ramp --quick,unknown,candidate_rejected,Codex rollout-2026-09-24T07-28-15
+117,2026-09-24T07:32:50Z,r10-prep,"Fold-turn-suffix, early quick check, control",760.3,load-ramp --quick,unknown,control,Codex rollout-2026-09-24T07-28-15
+118,2026-09-24T07:39:28Z,r10-prep,Fast-node r9 result (basis for AR-overlap projection; distinct from the 688.4 slow-node official figure),836.1,load-ramp paired,unknown,other,Codex rollout-2026-09-24T07-28-15
+119,2026-09-24T08:09:37Z,r10,"Prefill burst scheduler, first real activation attempt (safe latency, poor burst formation)",677.8,load-ramp,unknown,candidate_rejected,Codex rollout-2026-09-24T07-41-01
+120,2026-09-24T08:15:47Z,r10,"Quick C=48 on node12, pre-full-ramp",744.0,load-ramp --quick C48,node12,control,Codex rollout / agent-a034ae7747122e683.jsonl
+121,2026-09-24T08:19:53Z,r10,"integration-r10, paired control anchor, C=64 (official incumbent)",784.9166,load-ramp C64,job 650294/node12,accepted,Codex rollout-2026-09-24T07-41-01 / CAMPAIGN_LOG.md
+122,2026-09-24T08:29:34Z,r10/opt,"Age-7 combined burst candidate, quick (+3.2% vs control)",767.8,load-ramp --quick,unknown,other,Codex rollout-2026-09-24T07-41-01
+123,2026-09-24T08:45:38Z,r10,"Phase-separated-prefill + NG2 candidate (rejected, +0.65% only)",790.0208,load-ramp,job 650294/node12,candidate_rejected,Codex rollout / agent-a034ae7747122e683.jsonl / CAMPAIGN_LOG.md
+124,2026-09-24T09:36:49Z,r10/opt,"Chat-history-reuse v1, candidate (bug: generated tokens still re-forwarded)",814.2,load-ramp,unknown,candidate_rejected,Codex rollout-2026-09-24T07-41-12 / agent-aa5b9bb65ac46aa76.jsonl / CAMPAIGN_LOG.md
+125,2026-09-24T09:36:49Z,r10/opt,"Chat-history-reuse v1, same-node control",784.9,load-ramp,unknown,control,Codex rollout-2026-09-24T07-41-12
+126,2026-09-24T10:10:51Z,r11,"Tiered burst activation, diagnostic before",638.0,load-ramp (diagnostic),unknown,control,Codex rollout-2026-09-24T07-41-06
+127,2026-09-24T10:10:51Z,r11,"Tiered burst activation, diagnostic after (below 10% continuation gate)",637.1,"diagnostic tok/s (full-service, flagged)",unknown,candidate_rejected,Codex rollout-2026-09-24T07-41-06 / CAMPAIGN_LOG.md
+128,2026-09-24T14:40Z,r11/C96-capacity,"Buggy-benchmark first pass (window-boundary truncation bug), C=80",801.19,load-ramp C80 (later found buggy),unknown,other,Codex rollout-2026-09-24T14-51-56
+129,2026-09-24T14:40Z,r11/C96-capacity,"Buggy-benchmark first pass, C=88",741.81,load-ramp C88 (later found buggy),unknown,other,Codex rollout-2026-09-24T14-51-56
+130,2026-09-24T14:40Z,r11/C96-capacity,"Buggy-benchmark first pass, C=96",775.48,load-ramp C96 (later found buggy),unknown,other,Codex rollout-2026-09-24T14-51-56
+131,2026-09-24T14:45:45Z,r11/C96-capacity,"Corrected recompute (post-bug-fix), C=80",947,load-ramp C80,unknown,other,Codex rollout-2026-09-24T14-51-56
+132,2026-09-24T14:45:45Z,r11/C96-capacity,"Corrected recompute, C=88",925,load-ramp C88,unknown,other,Codex rollout-2026-09-24T14-51-56
+133,2026-09-24T14:45:45Z,r11/C96-capacity,"Corrected recompute, C=96 (10.1% below the then-target)",1042,load-ramp C96,unknown,other,Codex rollout-2026-09-24T14-51-56
+134,2026-09-24T18:08:33+02:00,r12,"integration-r12, full build, C=96 (official corrected-baseline incumbent)",1055.5372737377504,load-ramp v6 C96,job 650886 :: terminal_c96_9e366091v1_timing/timing_c96.json,accepted,the test cluster /path/to/home/c96_timing_650886_results.tar.gz / CAMPAIGN_LOG.md / Codex rollout-2026-09-24T16-13-24
+135,2026-09-24T20:15:09+02:00,r12,Fold turn-open suffix into overlapped decode - flag-off C96 control,1053.390534263958,load-ramp C96,job 650888/node09 :: fold_suffix_028f9331/control_c96.json,control,the test cluster /path/to/home/fold_suffix_pair_650888_results.tgz / CAMPAIGN_LOG.md
+136,2026-09-24T20:15:09+02:00,r12/r13,Fold turn-open suffix (SEED_FOLD_TURN_SUFFIX=1) - flag-on paired candidate (official winner; source 7afdc3fd),1154.4770391356592,load-ramp C96,job 650888/node09 :: fold_suffix_028f9331/candidate_c96.json,accepted,the test cluster /path/to/home/fold_suffix_pair_650888_results.tgz / CAMPAIGN_LOG.md
+137,2026-09-24T19:51:36+02:00,r12/r13,Fold turn-open suffix 'overlap' variant - unpaired repeat of the accepted change (also reported as an interim 1154.56 full-ramp report),1154.5637716743854,load-ramp C96,job 650888 :: fold_suffix_028f9331/full_c96.json,other,the test cluster /path/to/home/fold_suffix_overlap_650888_results.tgz / Codex rollout-2026-09-24T17-13-25
+138,"2026-09-24T~08:11Z (real crash, reported later)",r14/MTP,"MTP live-acceptance path, real C=48 run before validator crash (captured replay corrupted lane_drafts, ranks 1-3 halted)",555,load-ramp C48,unknown,regression_or_broken,Codex rollout-2026-09-24T07-41-01
+139,2026-09-24T23:00:53+02:00,r13,"C112 rejected - sparse decode ladder (buckets 64/80/96 omitted, forced padding to 112)",999.9226426299098,load-ramp,job 651044 :: c112_capacity_651044_retry2/ramp112.json,candidate_rejected,the test cluster /path/to/home/c112_capacity_651044_retry2_results.tgz / CAMPAIGN_LOG.md
+140,2026-09-24T23:18:17+02:00,r13,C112 rejected - full bucket ladder rerun (effectively identical),998.8531158660393,load-ramp,job 651044 :: c112_capacity_651044_full_ladder/ramp112.json,candidate_rejected,the test cluster /path/to/home/c112_capacity_651044_full_ladder_results.tgz / CAMPAIGN_LOG.md
+141,2026-09-25T01:54:47+02:00,r14,Target-closing bundle same-node control arm (re-measure of incumbent),1078.399395705163,load-ramp,job 651079 :: target_closing_pair_651079/control_c96.json,control,the test cluster /path/to/home/target_closing_wrap_651079_results.tgz / CAMPAIGN_LOG.md
+142,2026-09-25T03:55:57+02:00,r15 (in progress),Round 15 bundle-w4 fresh control re-measure of incumbent,1027.6740247954472,load-ramp,job 651710-family,control,the test cluster /path/to/home/r15/bundle-w4/out-control1/c96.json
+143,2026-09-25T02:46:45.779Z,r15,W4 bundle salvage: control1 (2f012388/143fe17a),1027.7,load-ramp,node13/651614,control,Claude transcript 9ae9a100 W4
+144,2026-09-25T02:46:45.779Z,r15,"W4 bundle salvage: reduced1 candidate (5f3381e0, +2.84%)",1056.9,load-ramp,node13/651614,accepted,Claude transcript 9ae9a100 W4
+145,2026-09-25T02:46:45.779Z,r15,W4 bundle salvage: control2 (2f012388/143fe17a),1028.5,load-ramp,node13/651614,control,Claude transcript 9ae9a100 W4
+146,2026-09-25T02:46:45.779Z,r15,"W4 bundle salvage: reduced2 candidate (5f3381e0, +3.90%)",1068.6,load-ramp,node13/651614,accepted,Claude transcript 9ae9a100 W4
+147,2026-09-25T02:46:45.779Z,r15,"W4 bundle salvage: full bundle candidate (c4b793d6, unpaired, +5.67% vs control2)",1086.8,load-ramp,node13/651614,other,Claude transcript 9ae9a100 W4
+148,2026-09-25T04:22:01.521Z,r15,W2 decode96 attn pair p1 control (143fe17a+flags),1016.6,load-ramp,node05/651610,control,Claude transcript 9ae9a100 W2
+149,2026-09-25T04:22:01.521Z,r15,"W2 decode96 attn pair p1 candidate SPLITK (0564e4a4, +1.7%, gate pass)",1034.3,load-ramp,node05/651610,accepted,Claude transcript 9ae9a100 W2
+150,2026-09-25T04:22:01.521Z,r15,W2 decode96 attn pair p2 control (71c59796+knob),1044.2,load-ramp,node05/651610,control,Claude transcript 9ae9a100 W2
+151,2026-09-25T04:22:01.521Z,r15,"W2 decode96 attn pair p2 candidate (9f73241e, +3.4%)",1080.1,load-ramp,node05/651610,accepted,Claude transcript 9ae9a100 W2
+152,2026-09-25T04:22:01.521Z,r15,W2 decode96 attn pair p3 control (71c59796+knob),1061.0,load-ramp,node05/651610,control,Claude transcript 9ae9a100 W2
+153,2026-09-25T04:22:01.521Z,r15,W2 decode96 attn pair p3 candidate (+1.4%),1075.9,load-ramp,node05/651610,accepted,Claude transcript 9ae9a100 W2
+154,2026-09-25T04:22:01.521Z,r15,"W2 decode96 attn pair p4 control (01a17240+knob, prod flags)",1132.6,load-ramp,node05/651610,control,Claude transcript 9ae9a100 W2
+155,2026-09-25T04:22:01.521Z,r15,"W2 decode96 attn pair p4 candidate a32fab31 (+1.1%, merged into f7423b5e)",1145.3,load-ramp,node05/651610,accepted,Claude transcript 9ae9a100 W2
+156,2026-09-25T04:44:01.834Z,r15,"W5 big-prefill P1 control (old incumbent, width-bug run)",1003.9,load-ramp,node14/651710,control,Claude transcript 9ae9a100 W5
+157,2026-09-25T04:44:01.834Z,r15,"W5 big-prefill P1 candidate (width bug, +0.4%, refuted)",1008.2,load-ramp,node14/651710,regression_or_broken,Claude transcript 9ae9a100 W5
+158,2026-09-25T04:44:01.834Z,r15,"W5 big-prefill P2 control (bug fixed, 1024/400ms)",1011.4,load-ramp,node14/651710,control,Claude transcript 9ae9a100 W5
+159,2026-09-25T04:44:01.834Z,r15,"W5 big-prefill P2 candidate (bug fixed, +5.4%, kept)",1066.1,load-ramp,node14/651710,other,Claude transcript 9ae9a100 W5
+160,2026-09-25T04:44:01.834Z,r15,"W5 big-prefill P3 control (on 71c59796, 1024/400ms)",1045.8,load-ramp,node14/651710,control,Claude transcript 9ae9a100 W5
+161,2026-09-25T04:44:01.834Z,r15,"W5 big-prefill P3 candidate 1024/400ms (+5.1%, gate pass, superseded)",1099.2,load-ramp,node14/651710,candidate_rejected,Claude transcript 9ae9a100 W5
+162,2026-09-25T04:44:01.834Z,r15,"W5 big-prefill P3 candidate 1536/800ms (+9.3% vs 71c59796, adopted)",1142.8,load-ramp,node14/651710,accepted,Claude transcript 9ae9a100 W5
+163,2026-09-25T04:44:01.834Z,r15,W5 big-prefill P4 control (1536/800ms repeat),1055.4,load-ramp,node14/651710,control,Claude transcript 9ae9a100 W5
+164,2026-09-25T04:44:01.834Z,r15,"W5 big-prefill P4 candidate 1536/800ms repeat (+6.4%, adopted)",1123.4,load-ramp,node14/651710,accepted,Claude transcript 9ae9a100 W5
+165,2026-09-25T04:44:01.834Z,r15,"W5 big-prefill P4 candidate 2048/1200ms (+7.7%, not adopted, TTFT cost)",1136.4,load-ramp,node14/651710,candidate_rejected,Claude transcript 9ae9a100 W5
+166,2026-09-25T04:44:01.834Z,r15,W5 big-prefill acceptance A1 control (143fe17a),1006.4,load-ramp,node14/651710,control,Claude transcript 9ae9a100 W5
+167,2026-09-25T04:44:01.834Z,r15,"W5 big-prefill acceptance B1 candidate 01a17240 (+12.1%, gate pass, round-15 acceptance pair1)",1128.4,load-ramp,node14/651710,accepted,Claude transcript 9ae9a100 W5
+168,2026-09-25T04:44:01.834Z,r15,W5 big-prefill acceptance A2 control (143fe17a),1015.6,load-ramp,node14/651710,control,Claude transcript 9ae9a100 W5
+169,2026-09-25T04:44:01.834Z,r15,W5 big-prefill acceptance B2 candidate 01a17240 (+11.2%),1129.1,load-ramp,node14/651710,accepted,Claude transcript 9ae9a100 W5
+170,2026-09-25T04:46:48.765Z,r15,W3 prefill-nonmoe superseded pair1 control (1eba3ee8 base),1041.4,load-ramp,node15/651639,control,Claude transcript 9ae9a100 W3
+171,2026-09-25T04:46:48.765Z,r15,"W3 prefill-nonmoe superseded pair1 candidate (1eba3ee8, +3.98%, superseded)",1082.8,load-ramp,node15/651639,candidate_rejected,Claude transcript 9ae9a100 W3
+172,2026-09-25T04:46:48.765Z,r15,W3 prefill-nonmoe superseded pair2 control (1eba3ee8 base),1047.7,load-ramp,node15/651639,control,Claude transcript 9ae9a100 W3
+173,2026-09-25T04:46:48.765Z,r15,"W3 prefill-nonmoe superseded pair2 candidate (+3.94%, superseded)",1089.0,load-ramp,node15/651639,candidate_rejected,Claude transcript 9ae9a100 W3
+174,2026-09-25T04:46:48.765Z,r15,W3 prefill-nonmoe accepted pair1 control (01a17240),1124.5,load-ramp,node15/651639,control,Claude transcript 9ae9a100 W3
+175,2026-09-25T04:46:48.765Z,r15,"W3 prefill-nonmoe accepted pair1 candidate accd0d3c (+3.80%, merged as 05b60bed)",1167.3,load-ramp,node15/651639,accepted,Claude transcript 9ae9a100 W3
+176,2026-09-25T04:46:48.765Z,r15,W3 prefill-nonmoe accepted pair2 control (01a17240),1111.7,load-ramp,node15/651639,control,Claude transcript 9ae9a100 W3
+177,2026-09-25T04:46:48.765Z,r15,"W3 prefill-nonmoe accepted pair2 candidate accd0d3c (+4.78%, merged as 05b60bed)",1164.8,load-ramp,node15/651639,accepted,Claude transcript 9ae9a100 W3
+178,2026-09-25T06:03:45.438Z,r15,"W8 decode-moe candidate b3 FLAT=0 (rejected, -0.7%)",1154.0,load-ramp,node16/651716,candidate_rejected,Claude transcript 9ae9a100 W8
+179,2026-09-25T06:03:45.438Z,r15,W8 decode-moe control f7423b5e (pair1),1162.4,load-ramp,node16/651716,control,Claude transcript 9ae9a100 W8
+180,2026-09-25T06:03:45.438Z,r15,"W8 decode-moe candidate b4 68cc42a5 FLAT=0 (rejected, -0.5%)",1143.7,load-ramp,node16/651716,candidate_rejected,Claude transcript 9ae9a100 W8
+181,2026-09-25T06:03:45.438Z,r15,W8 decode-moe control f7423b5e (pair2),1149.3,load-ramp,node16/651716,control,Claude transcript 9ae9a100 W8
+182,2026-09-25T07:25:24.505Z,r15,"W10 dirty control 05b60bed (contaminated by 85GB core dumps, reference only)",1143,load-ramp,node05/651726,other,Claude transcript 9ae9a100 W10
+183,2026-09-25T07:58:58.096Z,r15,"W10 MTP candidate graphpf2 (k=2, untuned verify widths, old seed, clean boot)",1106.2,load-ramp,node05/651726,regression_or_broken,Claude transcript 9ae9a100 W10
+184,2026-09-25T07:58:58.096Z,r15,"W10 clean control2 05b60bed (old seed, paired with graphpf2)",1160.2,load-ramp,node05/651726,control,Claude transcript 9ae9a100 W10
+185,2026-09-25T08:16:22.039Z,r15,W9 packed-prefill H9a control arm1 (05b60bed),1199.8,load-ramp,node15/651718,control,Claude transcript 9ae9a100 W9
+186,2026-09-25T08:16:22.039Z,r15,W9 packed-prefill H9a control arm2 (05b60bed),1178.8,load-ramp,node15/651718,control,Claude transcript 9ae9a100 W9
+187,2026-09-25T08:16:22.039Z,r15,W9 packed-prefill H9a control arm3 (05b60bed),1189.6,load-ramp,node15/651718,control,Claude transcript 9ae9a100 W9
+188,2026-09-25T08:16:22.039Z,r15,W9 packed-prefill H9a control arm4 (05b60bed),1171.4,load-ramp,node15/651718,control,Claude transcript 9ae9a100 W9
+189,2026-09-25T08:16:22.039Z,r15,"W9 packed-prefill candidate pk arm1 80084d3d (+5.6%, accepted, merged as 3be127a3)",1266.8,load-ramp,node15/651718,accepted,Claude transcript 9ae9a100 W9
+190,2026-09-25T08:16:22.039Z,r15,"W9 packed-prefill candidate pk arm2 80084d3d (+3.5%, accepted)",1219.6,load-ramp,node15/651718,accepted,Claude transcript 9ae9a100 W9
+191,2026-09-25T08:16:22.039Z,r15,"W9 packed-prefill candidate pk arm3 80084d3d (+6.5%, accepted)",1266.8,load-ramp,node15/651718,accepted,Claude transcript 9ae9a100 W9
+192,2026-09-25T08:16:22.039Z,r15,"W9 packed-prefill candidate pk arm4 80084d3d (+8.4%, accepted)",1269.3,load-ramp,node15/651718,accepted,Claude transcript 9ae9a100 W9
+193,2026-09-25T08:16:22.039Z,r15,"W9 packed-prefill pk arm5 80084d3d (extra run, used as SP baseline)",1254.9,load-ramp,node15/651718,accepted,Claude transcript 9ae9a100 W9
+194,2026-09-25T08:16:22.039Z,r15,"W9 packed-prefill SP_MAX_TOKENS=2048 candidate pksp arm1 e41aa2da (-0.5%, no call, kept off)",1260.8,load-ramp,node15/651718,candidate_rejected,Claude transcript 9ae9a100 W9
+195,2026-09-25T08:16:22.039Z,r15,"W9 packed-prefill SP_MAX_TOKENS=2048 candidate pksp arm2 (+5.0%, no call, kept off)",1280.5,load-ramp,node15/651718,candidate_rejected,Claude transcript 9ae9a100 W9
+196,2026-09-25T08:16:22.039Z,r15,"W9 packed-prefill SP_MAX_TOKENS=2048 candidate pksp arm3 (-2.0%, no call, kept off)",1241.0,load-ramp,node15/651718,candidate_rejected,Claude transcript 9ae9a100 W9
+197,2026-09-25T08:16:22.039Z,r15,"W9 packed-prefill SP_MAX_TOKENS=2048 candidate pksp arm4 (+0.4%, no call, kept off)",1274.5,load-ramp,node15/651718,candidate_rejected,Claude transcript 9ae9a100 W9
+198,2026-09-25T08:16:22.039Z,r15,"W9 packed-prefill SP_MAX_TOKENS=2048 candidate pksp arm5 (+1.3%, no call, kept off)",1271.3,load-ramp,node15/651718,candidate_rejected,Claude transcript 9ae9a100 W9
+199,2026-09-25T08:35:03.884Z,r15,"W10 MTP candidate graphpf3 (tuned seed, k=2, +7.8%/+6.0%, FAILS accuracy gate: legacy greedy 3/5)",1250.8,load-ramp,node05/651726,regression_or_broken,Claude transcript 9ae9a100 W10
+200,2026-09-25T08:47:05.670Z,r15,"W10 clean control3 05b60bed (old seed, second control for graphpf3 comparison)",1180.0,load-ramp,node05/651726,control,Claude transcript 9ae9a100 W10
+201,2026-09-25T09:09:44.303Z,r15,W11 rank-skew ledger-B control A1 (baseline),1196.2,load-ramp,node16/651725,control,Claude transcript 9ae9a100 W11
+202,2026-09-25T09:09:44.303Z,r15,"W11 rank-skew ledger-B candidate B1 host-mem-off-node0+fadvise (-1.6%, rejected)",1177.1,load-ramp,node16/651725,candidate_rejected,Claude transcript 9ae9a100 W11
+203,2026-09-25T09:09:44.303Z,r15,W11 rank-skew ledger-B control A2 (baseline repeat),1191.5,load-ramp,node16/651725,control,Claude transcript 9ae9a100 W11
+204,2026-09-25T09:09:44.303Z,r15,"W11 rank-skew ledger-B candidate B2 host-mem-off-node0+fadvise (-0.3%, rejected)",1187.3,load-ramp,node16/651725,candidate_rejected,Claude transcript 9ae9a100 W11
+205,2026-09-25T09:09:44.303Z,r15,W11 rank-skew ledger-C control A1 (baseline),1193.2,load-ramp,node16/651725,control,Claude transcript 9ae9a100 W11
+206,2026-09-25T09:09:44.303Z,r15,"W11 rank-skew ledger-C candidate C1 SEED_PREFILL_VALIDATE_LOWMEM (0.0%, neutral, not merged)",1193.2,load-ramp,node16/651725,candidate_rejected,Claude transcript 9ae9a100 W11
+207,2026-09-25T09:09:44.303Z,r15,W11 rank-skew ledger-C control A2 (baseline repeat),1193.6,load-ramp,node16/651725,control,Claude transcript 9ae9a100 W11
+208,2026-09-25T09:09:44.303Z,r15,"W11 rank-skew ledger-C candidate C2 SEED_PREFILL_VALIDATE_LOWMEM (-0.6%, neutral, not merged)",1186.1,load-ramp,node16/651725,candidate_rejected,Claude transcript 9ae9a100 W11
+209,2026-09-25T09:40:52.742Z,r15,"W10 MTP candidate graphpf4 (forced drafts off, eager suffix ticks, FAILS gate legacy 3/5)",973,load-ramp,node05/651726,regression_or_broken,Claude transcript 9ae9a100 W10
+210,2026-09-25T09:55:14.031Z,r15,W18 history-reuse pair1 control bfcbb508 RECLAIM=0 (3be127a3-equivalent),1269.8,load-ramp,node17/651972,control,Claude transcript 9ae9a100 W18
+211,2026-09-25T09:55:14.031Z,r15,"W18 history-reuse pair1 candidate bfcbb508 RECLAIM=1 (+26.8%, accepted, merged toward 349ff3ae)",1610.1,load-ramp,node17/651972,accepted,Claude transcript 9ae9a100 W18
+212,2026-09-25T09:55:14.031Z,r15,W18 history-reuse pair2 control ed82d078 RECLAIM=0,1268.3,load-ramp,node17/651972,control,Claude transcript 9ae9a100 W18
+213,2026-09-25T09:55:14.031Z,r15,"W18 history-reuse pair2 candidate ed82d078 RECLAIM=1 (+27.8%, accepted, merged as 349ff3ae)",1621.2,load-ramp,node17/651972,accepted,Claude transcript 9ae9a100 W18
+214,2026-09-25T10:53:47.023Z,r15,"W19 alloc-order diagnostic single run (a0a7f335-equiv, refuted as lever)",1280.0,load-ramp,node18/651992,other,Claude transcript 9ae9a100 W19
+215,2026-09-25T10:53:47.023Z,r15,"W19 alloc-order control A1 (349ff3ae, order A-B-A)",1590.1,load-ramp,node18/651992,control,Claude transcript 9ae9a100 W19
+216,2026-09-25T10:53:47.023Z,r15,"W19 alloc-order candidate B 45f2fe7d (+2.0% mean, accepted, merged as 13b628bd)",1639.1,load-ramp,node18/651992,accepted,Claude transcript 9ae9a100 W19
+217,2026-09-25T10:53:47.023Z,r15,"W19 alloc-order control A2 (349ff3ae, order A-B-A)",1623.6,load-ramp,node18/651992,control,Claude transcript 9ae9a100 W19
+218,2026-09-25T10:56:56.655Z,r15,W16 phase1 trace-overhead control 3be127a3 (traced),1283,load-ramp,node03/651917,control,Claude transcript 9ae9a100 W16
+219,2026-09-25T10:56:56.655Z,r15,W16 phase1 trace-overhead control 3be127a3 (untraced run1),1287,load-ramp,node03/651917,control,Claude transcript 9ae9a100 W16
+220,2026-09-25T10:56:56.655Z,r15,W16 phase1 trace-overhead control 3be127a3 (untraced run2),1267,load-ramp,node03/651917,control,Claude transcript 9ae9a100 W16
+221,2026-09-25T10:56:56.655Z,r15,W16 BT32 pair1 control (3be127a3),1266.2,load-ramp,node03/651917,control,Claude transcript 9ae9a100 W16
+222,2026-09-25T10:56:56.655Z,r15,"W16 BT32 pair1 candidate 46259ae4 (+4.8%, accepted, merged as 5552c2c2)",1327.0,load-ramp,node03/651917,accepted,Claude transcript 9ae9a100 W16
+223,2026-09-25T10:56:56.655Z,r15,W16 BT32 pair2 control (3be127a3),1276.8,load-ramp,node03/651917,control,Claude transcript 9ae9a100 W16
+224,2026-09-25T10:56:56.655Z,r15,"W16 BT32 pair2 candidate 46259ae4 (+3.7%, accepted)",1323.7,load-ramp,node03/651917,accepted,Claude transcript 9ae9a100 W16
+225,2026-09-25T10:56:56.655Z,r15,"W16 early-launch pair1 control (BT32 on, 5552c2c2)",1320.0,load-ramp,node03/651917,control,Claude transcript 9ae9a100 W16
+226,2026-09-25T10:56:56.655Z,r15,"W16 early-launch pair1 candidate 51eedbff (+2.3%, accepted, merged as 0493c40c)",1351.0,load-ramp,node03/651917,accepted,Claude transcript 9ae9a100 W16
+227,2026-09-25T10:56:56.655Z,r15,"W16 early-launch pair2 control (BT32 on, 5552c2c2)",1301.3,load-ramp,node03/651917,control,Claude transcript 9ae9a100 W16
+228,2026-09-25T10:56:56.655Z,r15,"W16 early-launch pair2 candidate 51eedbff (+4.7%, accepted)",1362.7,load-ramp,node03/651917,accepted,Claude transcript 9ae9a100 W16
+229,2026-09-25T11:25:18.190Z,r15,"W16 decomposition baseline 0493c40c (tuned cache seed, single measurement)",1722.8,load-ramp,node14/652066,control,Claude transcript 9ae9a100 W16
+230,2026-09-25T12:04:01.728Z,r15,W18 C16-fix pair1 control A1 349ff3ae,1701.9,load-ramp,node19/652054,control,Claude transcript 9ae9a100 W18
+231,2026-09-25T12:04:01.728Z,r15,"W18 C16-fix pair1 candidate B1 a7f4d9ce (accepted, C96 noise-neutral, fixes C16 lookup bug, merged toward b346d1f2)",1697.3,load-ramp,node19/652054,accepted,Claude transcript 9ae9a100 W18
+232,2026-09-25T12:04:01.728Z,r15,W18 C16-fix pair2 control A2 349ff3ae,1681.3,load-ramp,node19/652054,control,Claude transcript 9ae9a100 W18
+233,2026-09-25T12:04:01.728Z,r15,W18 C16-fix pair2 candidate B2 a7f4d9ce (accepted),1687.2,load-ramp,node19/652054,accepted,Claude transcript 9ae9a100 W18
+234,2026-09-25T12:04:01.728Z,r15,"W18 C16-fix B3 a7f4d9ce BT32=0 (unpaired diagnostic, BT32 hypothesis refuted)",1638.8,load-ramp,node19/652054,other,Claude transcript 9ae9a100 W18
+235,2026-09-25T12:08:13.331Z,r15,"W13 MTP gate1 fixed build (forced drafts on, gate pass, unpaired vs integration base)",1746.0,load-ramp,node08/652041,other,Claude transcript 9ae9a100 W13
+236,2026-09-25T12:31:18.304Z,r15,W17 BLAS-seed pair1 control c112_cache_seed (3be127a3),1235.2,load-ramp,node20/651970,control,Claude transcript 9ae9a100 W17
+237,2026-09-25T12:31:18.304Z,r15,"W17 BLAS-seed pair1 candidate seed_r15 (+5.2%, accepted, became runbook default seed)",1299.7,load-ramp,node20/651970,accepted,Claude transcript 9ae9a100 W17
+238,2026-09-25T12:31:18.304Z,r15,W17 BLAS-seed pair2 control c112_cache_seed (3be127a3),1210.1,load-ramp,node20/651970,control,Claude transcript 9ae9a100 W17
+239,2026-09-25T12:31:18.304Z,r15,"W17 BLAS-seed pair2 candidate seed_r15 (+4.8%, accepted)",1268.6,load-ramp,node20/651970,accepted,Claude transcript 9ae9a100 W17
+240,2026-09-25T12:31:18.304Z,r15,"W17 TILED attn bf16/SPLITS2 pairA candidate (+5.5%, FAILS gate legacy 4/5, rejected)",1655.7,load-ramp,node20/651970,candidate_rejected,Claude transcript 9ae9a100 W17
+241,2026-09-25T12:31:18.304Z,r15,W17 TILED attn bf16/SPLITS2 pairA control (349ff3ae),1569.6,load-ramp,node20/651970,control,Claude transcript 9ae9a100 W17
+242,2026-09-25T12:31:18.304Z,r15,"W17 TILED attn bf16/SPLITS2 pairB candidate (-5.6%, FAILS gate, rejected)",1575.4,load-ramp,node20/651970,candidate_rejected,Claude transcript 9ae9a100 W17
+243,2026-09-25T12:31:18.304Z,r15,W17 TILED attn bf16/SPLITS2 pairB control (349ff3ae),1668.3,load-ramp,node20/651970,control,Claude transcript 9ae9a100 W17
+244,2026-09-25T12:31:18.304Z,r15,"W17 TILED attn V0 fp32/SPLITS1 candidate (+0.7%, gate pass, inconclusive, not merged)",1677.5,load-ramp,node20/651970,other,Claude transcript 9ae9a100 W17
+245,2026-09-25T12:31:18.304Z,r15,W17 TILED attn V0 control (349ff3ae),1665.3,load-ramp,node20/651970,control,Claude transcript 9ae9a100 W17
+246,2026-09-25T13:41:09.487Z,r15,W14 decode-SP intermediate pair1 control (3be127a3),1268.1,load-ramp,node04/651918,other,Claude transcript 9ae9a100 W14
+247,2026-09-25T13:41:09.487Z,r15,W14 decode-SP intermediate pair1 candidate d5ff54f4 (+1.38%),1285.6,load-ramp,node04/651918,other,Claude transcript 9ae9a100 W14
+248,2026-09-25T13:41:09.487Z,r15,W14 decode-SP intermediate pair2 control (3be127a3),1280.1,load-ramp,node04/651918,other,Claude transcript 9ae9a100 W14
+249,2026-09-25T13:41:09.487Z,r15,W14 decode-SP intermediate pair2 candidate d5ff54f4 (+0.15%),1282.0,load-ramp,node04/651918,other,Claude transcript 9ae9a100 W14
+250,2026-09-25T13:41:09.487Z,r15,W14 decode-SP intermediate pair3 control (349ff3ae),1606.5,load-ramp,node04/651918,other,Claude transcript 9ae9a100 W14
+251,2026-09-25T13:41:09.487Z,r15,W14 decode-SP intermediate pair3 candidate e2ae423b (+2.28%),1643.2,load-ramp,node04/651918,other,Claude transcript 9ae9a100 W14
+252,2026-09-25T13:41:09.487Z,r15,W14 decode-SP intermediate pair4 control (349ff3ae),1588.3,load-ramp,node04/651918,other,Claude transcript 9ae9a100 W14
+253,2026-09-25T13:41:09.487Z,r15,W14 decode-SP intermediate pair4 candidate e2ae423b (+4.23%),1655.5,load-ramp,node04/651918,other,Claude transcript 9ae9a100 W14
+254,2026-09-25T13:41:09.487Z,r15,W14 prefill-AR-SP-only pair1 control (8a31efe2),1745.6,load-ramp,node21/652108,other,Claude transcript 9ae9a100 W14
+255,2026-09-25T13:41:09.487Z,r15,W14 prefill-AR-SP-only pair1 candidate 8a64d407 (+3.48%),1806.4,load-ramp,node21/652108,other,Claude transcript 9ae9a100 W14
+256,2026-09-25T13:41:09.487Z,r15,W14 prefill-AR-SP-only pair2 control (8a31efe2),1755.1,load-ramp,node21/652108,other,Claude transcript 9ae9a100 W14
+257,2026-09-25T13:41:09.487Z,r15,W14 prefill-AR-SP-only pair2 candidate 8a64d407 (+2.78%),1803.9,load-ramp,node21/652108,other,Claude transcript 9ae9a100 W14
+258,2026-09-25T13:41:09.487Z,r15,W14 stacked decode+prefill pair1 control (8a31efe2),1729.1,load-ramp,node21/652108,control,Claude transcript 9ae9a100 W14
+259,2026-09-25T13:41:09.487Z,r15,"W14 stacked decode+prefill pair1 candidate 8a64d407 (+9.30%, accepted, merged as b346d1f2)",1889.9,load-ramp,node21/652108,accepted,Claude transcript 9ae9a100 W14
+260,2026-09-25T13:41:09.487Z,r15,W14 stacked decode+prefill pair2 control (8a31efe2),1750.8,load-ramp,node21/652108,control,Claude transcript 9ae9a100 W14
+261,2026-09-25T13:41:09.487Z,r15,"W14 stacked decode+prefill pair2 candidate 8a64d407 (+8.12%, accepted, merged as b346d1f2)",1892.9,load-ramp,node21/652108,accepted,Claude transcript 9ae9a100 W14
+262,2026-09-25T17:49:03.006Z,r15,"Reference b346d1f2 quick C96 vs SGLang-fork comparison (incumbent reference, not SGLang)",1888.6,load-ramp,node08/652265,control,Claude transcript 9ae9a100 SGLang-fork-benchmark-agent
+263,2026-09-25T17:49:03.006Z,r15,Reference b346d1f2 full-ramp C96 row vs SGLang-fork comparison,1857.7,load-ramp,node08/652265,control,Claude transcript 9ae9a100 SGLang-fork-benchmark-agent
+264,2026-09-25T18:28:20.065Z,r15,W13 MTP-merge A1 control b346d1f2,1905.4,load-ramp,node22/652260,control,Claude transcript 9ae9a100 W13
+265,2026-09-25T18:28:20.065Z,r15,"W13 MTP-merge B1 candidate e906da5e (no packed-prefill fix, MTP breaks packed shapes, halved throughput)",958.6,load-ramp,node22/652260,regression_or_broken,Claude transcript 9ae9a100 W13
+266,2026-09-25T18:28:20.065Z,r15,W13 MTP-merge A2 control b346d1f2,1863.9,load-ramp,node22/652260,control,Claude transcript 9ae9a100 W13
+267,2026-09-25T18:28:20.065Z,r15,"W13 MTP-merge B3 candidate 05c08020 (+20.3%, accepted, final round-15 MTP merge)",2242.4,load-ramp,node22/652260,accepted,Claude transcript 9ae9a100 W13
+268,2026-09-25T18:28:20.065Z,r15,W13 MTP-merge A3 control b346d1f2,1898.3,load-ramp,node22/652260,control,Claude transcript 9ae9a100 W13
+269,2026-09-25T18:28:20.065Z,r15,"W13 MTP-merge B4 candidate 05c08020 (+16.0%, accepted)",2201.4,load-ramp,node22/652260,accepted,Claude transcript 9ae9a100 W13
+270,2026-09-25T18:42:25.465Z,r15,Reference b346d1f2 full-ramp C96 row vs unmodified-SGLang attempt (SGLang never booted),1914.8,load-ramp,node18/652264,control,Claude transcript 9ae9a100 unmodified-SGLang-benchmark-agent
+271,2026-09-25T18:42:25.465Z,r15,Reference b346d1f2 quick C96 vs unmodified-SGLang attempt,1941.4,load-ramp,node18/652264,control,Claude transcript 9ae9a100 unmodified-SGLang-benchmark-agent
